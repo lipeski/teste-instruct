@@ -8,7 +8,6 @@
 <script>
 import Page from './components/Page.vue'
 
-
 export default {
   name: 'app',
   components: {
@@ -18,7 +17,6 @@ export default {
 </script>
 
 <style>
-
 #app {
   font-family: 'Montserrat';
   -webkit-font-smoothing: antialiased;

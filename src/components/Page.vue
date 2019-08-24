@@ -1,13 +1,12 @@
 <template>
   <div class="list-cards">
     <div class="filter-content">
+      <h3>Filtre por dominio de E-mail: </h3>
       <div class="filter" v-for="domain in domains" :key="domain.id">
         <label :for="domain.id">{{domain.domain}}</label>
         <input :id="domain.id" type="checkbox" v-model="domain.id" @click= "filter(domain.domain)" checked/><br>
       </div>
     </div>
-    
-    
     <div class="row">
       <div v-for="user in users" v-bind:key= user.id class="column">
         <div v-if="user.selected">
@@ -39,15 +38,12 @@ export default {
   },
   methods:{
     filter: function (domain) {
-      console.log(domain)
       for (let i = 0; i < this.users.length; i++) {
-
         let aux = this.users[i].email.substring(this.users[i].email.indexOf("@") + 1);
         if (aux === domain) {
           this.users[i].selected = this.users[i].selected == true ? false : true
         }
       }
-      console.log(this.users)
     }
     
   },
@@ -69,11 +65,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.filter-content{
-  text-align: left;
-  margin: 10px;
-  
-}
+
 .list-cards{
   background-color: #E2E7E9;
   margin-top:20px;
@@ -103,18 +95,10 @@ export default {
   }
 }
 
-/* .card{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background-color: white;
-    padding: 10px;
-    margin: 15px;
-    text-align: left
+.filter-content{
+  text-align: left;
+  padding: 10px;
+  background-color: #ffffff;
 }
-@media screen and (max-width: 800px) {
-    .card{
-        width: 83%;
-    }
-} */
-
 
 </style>
