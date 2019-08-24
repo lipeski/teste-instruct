@@ -1,10 +1,13 @@
 <template>
   <div class="list-cards">
     <div class="filter-content">
-      <h3>Filtre por dominio de E-mail: </h3>
-      <div class="filter" v-for="domain in domains" :key="domain.id">
-        <label :for="domain.id">{{domain.domain}}</label>
-        <input :id="domain.id" type="checkbox" v-model="domain.id" @click= "filter(domain.domain)" checked/><br>
+      <div class="filter">
+        <h3>Filtre por dominio de E-mail: </h3>
+        <div class="filter" v-for="domain in domains" :key="domain.id">
+          <ul id="dominios" style="list-style: none;">
+            <li class="checkbox"><label><input v-model="domain.id" type="checkbox" class="userRatings" @click= "filter(domain.domain)" checked>{{domain.domain}}</label></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -41,7 +44,9 @@ export default {
       for (let i = 0; i < this.users.length; i++) {
         let aux = this.users[i].email.substring(this.users[i].email.indexOf("@") + 1);
         if (aux === domain) {
-          this.users[i].selected = this.users[i].selected == true ? false : true
+          this.users[i].selected = !this.users[i].selected
+          // this.users[i].selected = this.users[i].selected == true ? false : true
+
         }
       }
     }
