@@ -1,4 +1,4 @@
-# teste-instruct
+#
 Com base no endpoint a seguir: http://jsonplaceholder.typicode.com/users, desenvolva uma interface responsiva que liste através de cards os seguintes dados dos usuários:
  - Nome
  - Username
@@ -11,7 +11,6 @@ A interface além de exibir os dados deve possuir um elemento de filtragem do se
 
 A interface deve seguir o padrão visual da Instruct, que pode ser encontrado em:
 
-https://instruct.com.br/wp-content/uploads/2019/02/manual-marca-instruct-201802.pdf
 
 Informações importantes:
  - Vamos avaliar o senso estético e usabilidade aplicada a tela;
